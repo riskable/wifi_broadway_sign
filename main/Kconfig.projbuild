@@ -1,0 +1,97 @@
+menu "Light Configuration"
+
+config MQTT_USERNAME
+    string "MQTT username"
+    default "foofoo"
+    help
+        The username you used to sign up at adafruit.io (probably)
+
+config MQTT_PASSWORD
+    string "MQTT password/AIO KEY"
+    default "somelongassstringfromadafruit.io"
+    help
+        The API key thing you get from adafruit.io (probably)
+
+config BROKER_URL
+    string "Broker URL"
+    default "mqtts://io.adafruit.com"
+    help
+        URL of the broker to connect to
+
+config BROKER_URL_FROM_STDIN
+    bool
+    default y if BROKER_URL = "FROM_STDIN"
+
+config AP_SSID
+    string "AP (setup) SSID (name)"
+    default "lightthing"
+    help
+        The wifi access point name that will be used when this thing hasn't been joined to wifi yet
+
+config AP_PASSWORD
+    string "AP (setup) password"
+    default "lightthing"
+    help
+        The WPA2 password needed to join this device's configuration AP (AP_SSID)
+
+config AP_SSID_HIDDEN
+    int "Config AP Hidden"
+    default 0
+    help
+        Contols whether the configuration AP will be hidden (1: hidden, 0: visible)
+
+config AP_CHANNEL
+    int "Config AP Channel"
+    default 11
+    help
+        The wifi channel used by the configuration AP
+
+config HOSTNAME
+    string "Hostname"
+    default "lightthing"
+    help
+        This host's hostname (must be less than 32 chars)
+
+config MDNS_INSTANCE_NAME
+    string "mDNS Instance Name"
+    default "IoT Thing (Riskable's ESP32 Light Controller)"
+    help
+        This host's mDNS instance name
+
+config MQTT_TOPIC_CONTROL
+    string "MQTT Control Topic"
+    default "lightcontrol"
+    help
+        The path on the MQTT server that will be used for 'control'
+
+config MQTT_TOPIC_SPEED
+    string "MQTT Speed Topic"
+    default "lightspeed"
+    help
+        The path on the MQTT server that will be used for 'speed'
+
+config MQTT_TOPIC_BRIGHTNESS
+    string "MQTT Brightness Topic"
+    default "lightbrightness"
+    help
+        The path on the MQTT server that will be used for 'brightness'
+
+config MQTT_TOPIC_COLOR
+    string "MQTT Color Topic"
+    default "lightcolor"
+    help
+        The path on the MQTT server that will be used for 'color'
+
+config MQTT_TOPIC_MODE
+    string "MQTT Mode Topic"
+    default "lightmode"
+    help
+        The path on the MQTT server that will be used for 'mode'
+
+config NTP_SERVER
+    string "NTP server hostname or IP"
+    default "pool.ntp.org"
+    help
+        Hostname or IP of the NTP (Network Time Protocol) server
+
+endmenu
